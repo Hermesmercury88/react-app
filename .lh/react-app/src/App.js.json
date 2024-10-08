@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1727767367534,
@@ -48,6 +48,54 @@
                 {
                     "date": 1728370909037,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n import Account from './page/Account';\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n-import\n+import MyBlog from './page/MyBlog';\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n@@ -49,8 +49,9 @@\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n+          \n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728371750623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n import MyBlog from './page/MyBlog';\n+\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n@@ -49,9 +50,9 @@\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n-          \n+          <Route path=\"/myblog\" element={<MyBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728371755970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n import MyBlog from './page/MyBlog';\n-\n+import AddBlog from './page/AddBlog';\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1728371780744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n+          <Route path=\"/myblog\" element={<MyBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728371785909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n-          <Route path=\"/myblog\" element={<MyBlog />} />\n+          <Route \n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728371896210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n-          <Route \n+          <Route path=\"/new-post\" element={<AddBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728373675040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n import MyBlog from './page/MyBlog';\n import AddBlog from './page/AddBlog';\n+im\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1728373687353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n import MyBlog from './page/MyBlog';\n import AddBlog from './page/AddBlog';\n-im\n+import \n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1728373695388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n import MyBlog from './page/MyBlog';\n import AddBlog from './page/AddBlog';\n-import \n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1728373721921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n           <Route path=\"/new-post\" element={<AddBlog />} />\n+          <Route path=\"/new-post\" element={<AddBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728373726959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n           <Route path=\"/new-post\" element={<AddBlog />} />\n-          <Route path=\"/new-post\" element={<AddBlog />} />\n+          <Route path=\"/ed\" element={<AddBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728373739323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n           <Route path=\"/new-post\" element={<AddBlog />} />\n-          <Route path=\"/ed\" element={<AddBlog />} />\n+          <Route path=\"/edit-post/:id\" element={< />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1728373752153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n import MyBlog from './page/MyBlog';\n import AddBlog from './page/AddBlog';\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n+import EditBlog from './page/EditBlog';\n \n const ProtectedRoute = ({ children }) => {\n   const { user } = useAuth();\n   const location = useLocation();\n@@ -52,9 +53,9 @@\n           <Route path=\"/about\" element={<AboutUs />} />\n           <Route path=\"/account\" element={<Account />} />\n           <Route path=\"/myblog\" element={<MyBlog />} />\n           <Route path=\"/new-post\" element={<AddBlog />} />\n-          <Route path=\"/edit-post/:id\" element={< />} />\n+          <Route path=\"/edit-post\" element={<EditBlog />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
                 }
             ],
             "date": 1727767367534,
