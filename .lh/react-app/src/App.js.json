@@ -1,0 +1,46 @@
+{
+    "sourceFile": "react-app/src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1727767367534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1727767379390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n import AboutUs from './page/About';\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n-import\n+import A\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1727767397536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n import AboutUs from './page/About';\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n-import A\n+\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1727767407343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n import { Route, BrowserRouter, Routes, Outlet, Navigate, useLocation } from 'react-router-dom';\n import Dashboard from './page/Dashboard';\n import Users from './page/User';\n import AboutUs from './page/About';\n+import Account from './page/Account';\n import Login from './page/Login';\n import Register from './page/Register';\n import NotPage from './page/Notpage';\n-\n import { useAuth } from './AuthProvider';\n import { AuthProvider } from './AuthProvider';\n \n const ProtectedRoute = ({ children }) => {\n"
+                },
+                {
+                    "date": 1727767445426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,9 @@\n         <Route element={<LayoutAdmin />}>\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n+          <Route path=\"/about\" element={<AboutUs />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1727767452075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         <Route element={<LayoutAdmin />}>\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n-          <Route path=\"/about\" element={<AboutUs />} />\n+          <Route path=\"/account\" element={<Account />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1727767543740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         <Route element={<LayoutAdmin />}>\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n-          <Route path=\"/account\" element={<Account />} />\n+          <Route path=\"/Account\" element={<Account />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                },
+                {
+                    "date": 1727767579926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         <Route element={<LayoutAdmin />}>\n           <Route path=\"/\" element={<Dashboard />} />\n           <Route path=\"/user\" element={<Users />} />\n           <Route path=\"/about\" element={<AboutUs />} />\n-          <Route path=\"/Account\" element={<Account />} />\n+          <Route path=\"/account\" element={<Account />} />\n         </Route>\n         <Route path=\"*\" element={<NotPage />} />\n         <Route path=\"/register\" element={<Register />} />\n         <Route path=\"/login\" element={<Login />} />\n"
+                }
+            ],
+            "date": 1727767367534,
+            "name": "Commit-0",
+            "content": "import './App.css';\nimport './index.css'; \nimport React from 'react';\nimport Sidebar from './components/Sidebar';\nimport Header from './components/Header';\nimport { Route, BrowserRouter, Routes, Outlet, Navigate, useLocation } from 'react-router-dom';\nimport Dashboard from './page/Dashboard';\nimport Users from './page/User';\nimport AboutUs from './page/About';\nimport Login from './page/Login';\nimport Register from './page/Register';\nimport NotPage from './page/Notpage';\nimport\nimport { useAuth } from './AuthProvider';\nimport { AuthProvider } from './AuthProvider';\n\nconst ProtectedRoute = ({ children }) => {\n  const { user } = useAuth();\n  const location = useLocation();\n  if (!user) {\n   return <Navigate to=\"/login\" state={{ from: location }} replace />;\n  }\n  return children;\n };\n\nconst LayoutAdmin = () => {\n  return (\n    <ProtectedRoute>\n      <div className=\"flex\">\n      <Sidebar />\n      <div className=\"flex-1\">\n        <Header />\n        <div className=\"m-6 p-10 bg-gray-50 min-h-screen rounded-lg\">\n          <Outlet /> {/* Outlet ใช้สำหรับแสดงคอมโพเน้นลูกใน LayoutAdmin */}\n        </div>\n      </div>\n    </div>\n    </ProtectedRoute>\n  );\n};\n\nfunction App() {\n  return (\n    <AuthProvider>\n      <BrowserRouter>\n      <Routes>\n        <Route element={<LayoutAdmin />}>\n          <Route path=\"/\" element={<Dashboard />} />\n          <Route path=\"/user\" element={<Users />} />\n          <Route path=\"/about\" element={<AboutUs />} />\n        </Route>\n        <Route path=\"*\" element={<NotPage />} />\n        <Route path=\"/register\" element={<Register />} />\n        <Route path=\"/login\" element={<Login />} />\n      </Routes>\n    </BrowserRouter>\n    </AuthProvider>\n  );\n}\n\nexport default App;"
+        }
+    ]
+}

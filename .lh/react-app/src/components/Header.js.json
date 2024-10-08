@@ -1,0 +1,18 @@
+{
+    "sourceFile": "react-app/src/components/Header.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1727771615652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1727771615652,
+            "name": "Commit-0",
+            "content": "import LogoutButton from \"../Logout\";\r\n\r\nfunction Header() {\r\n    return (\r\n        <header className=\"bg-teal-500 shadow p-4 flex justify-between\">\r\n        <h1 className=\"text-xl font-bold\">Management</h1> {/* แก้จาก text-x1 เป็น text-xl */}\r\n        <div>\r\n            <LogoutButton />\r\n        </div>\r\n        </header>\r\n    \r\n    );\r\n\r\n}\r\n\r\n\r\nexport default Header;"
+        }
+    ]
+}
