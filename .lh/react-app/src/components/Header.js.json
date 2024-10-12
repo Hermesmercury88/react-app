@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1727771615652,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728718418783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import LogoutButton from \"../Logout\";\r\n \r\n function Header() {\r\n     return (\r\n-        <header className=\"bg-teal-500 shadow p-4 flex justify-between\">\r\n+        <header className=\"bg-red-500 shadow p-4 flex justify-between\">\r\n         <h1 className=\"text-xl font-bold\">Management</h1> {/* แก้จาก text-x1 เป็น text-xl */}\r\n         <div>\r\n             <LogoutButton />\r\n         </div>\r\n"
                 }
             ],
             "date": 1727771615652,
