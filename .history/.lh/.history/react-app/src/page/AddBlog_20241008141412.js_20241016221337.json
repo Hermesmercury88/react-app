@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".history/react-app/src/page/AddBlog_20241008141412.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1729091488934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1729091488934,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\";\r\nimport { useAuth } from \"../AuthProvider\";\r\nimport axios from \"axios\";\r\nimport { useNavigate } from \"react-router-dom\";\r\n\r\nfunction AddBlog() {\r\n    const {user} = useAuth()\r\n    const navigate = useNavigate()\r\n\r\n    const [title, setTitle] = useState(\"\")\r\n    const [detial, setDetail] = useState(\"\")\r\n    const [category, setCategory] = useState(\"\")\r\n\r\n    const listCategory = [\r\n        { id:1, cateName: \"ความรู้\"},\r\n        { id:2, cateName: \"บันเทิง\"},\r\n    ]\r\n     const handleAddPost = async (event) => {\r\n        event.preventDefault();\r\n        const blogpost = {\r\n            title : title,\r\n            detail : detial,\r\n            category : category\r\n        };\r\n        try {\r\n            const response = await axios.post(\"http://localhost:4000/create-post\", blogpost, {\r\n                headers: {\r\n                    Authorization: `Bearer ${user.token}`\r\n                }\r\n            });\r\n            alert( response.data.message )\r\n            navigate('/myblog')\r\n            console.log(response.data);\r\n        } catch (error) {\r\n            console.error('Error', error)\r\n        }\r\n    }\r\n\r\n\r\n    return (\r\n    <>\r\n        <div  >\r\n            <form onSubmit={handleAddPost}>\r\n                <div className=\"mb-4\">\r\n                    <label className=\"block\">ชื่อเรื่อง</label>\r\n                    <input className=\"w-full p-2 border\" type=\"text\" value={title} onChange={e => setTitle(e.target.value)} />\r\n                </div>\r\n                <div className=\"mb-4\">\r\n                    <label className=\"block\">รายละเอียด</label>\r\n                    <textarea className=\"w-full h-24 border border-gray-300 p-2\" value={detial} onChange={e => setDetail(e.target.value)}></textarea>\r\n                </div>\r\n                <div className=\"mb-4\">\r\n                    <label className=\"block\">ประเภท</label>\r\n                    <select className=\"w-full p-2 border\" value={category} onChange={e => setCategory(e.target.value)}>\r\n                        <option>--เลือกประเภท--</option>\r\n                        { listCategory.map( cate => (\r\n                            <option key={cate.id} value={cate.cateName}> {cate.cateName} </option>\r\n                        ))}\r\n                    </select>\r\n                </div>\r\n                <div className=\"mb-4\">\r\n                    <button type=\"submit\" className=\"p-2 rounded bg-blue-500 hover:bg-blue-400 text-white\">บันทึก</button>\r\n                </div>\r\n\r\n            </form>\r\n\r\n        </div>\r\n    </> );\r\n}\r\n\r\nexport default AddBlog;"
+        }
+    ]
+}

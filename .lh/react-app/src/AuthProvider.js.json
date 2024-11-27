@@ -1,0 +1,26 @@
+{
+    "sourceFile": "react-app/src/AuthProvider.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1729094121848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729094129185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export const AuthProvider = ({ children }) => {\r\n     const [user, setUser] = useState(() => {\r\n         const token = localStorage.getItem('token');\r\n         return token ? { token } : null;  // Adjust this based on how you want to handle the user state\r\n-    });  // Adjust based on how you manage authentication\r\n+    });  \r\n     console.log(user)\r\n     const login = (token) => {\r\n         setUser({ token });\r\n         localStorage.setItem('token', token);  // Store the token in localStorage under 'token' key\r\n"
+                },
+                {
+                    "date": 1729094139019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n }\r\n export const AuthProvider = ({ children }) => {\r\n     const [user, setUser] = useState(() => {\r\n         const token = localStorage.getItem('token');\r\n-        return token ? { token } : null;  // Adjust this based on how you want to handle the user state\r\n+        return token ? { token } : null;  \r\n     });  \r\n     console.log(user)\r\n     const login = (token) => {\r\n         setUser({ token });\r\n-        localStorage.setItem('token', token);  // Store the token in localStorage under 'token' key\r\n+        localStorage.setItem('token', token);  \r\n     };\r\n     const logout = () => {\r\n         setUser(null);\r\n         localStorage.removeItem('token');\r\n"
+                }
+            ],
+            "date": 1729094121848,
+            "name": "Commit-0",
+            "content": "import React, { createContext, useContext, useState } from 'react';\r\n\r\nconst AuthContext = createContext(null);\r\n\r\nexport function useAuth() {\r\n    return useContext(AuthContext);\r\n}\r\nexport const AuthProvider = ({ children }) => {\r\n    const [user, setUser] = useState(() => {\r\n        const token = localStorage.getItem('token');\r\n        return token ? { token } : null;  // Adjust this based on how you want to handle the user state\r\n    });  // Adjust based on how you manage authentication\r\n    console.log(user)\r\n    const login = (token) => {\r\n        setUser({ token });\r\n        localStorage.setItem('token', token);  // Store the token in localStorage under 'token' key\r\n    };\r\n    const logout = () => {\r\n        setUser(null);\r\n        localStorage.removeItem('token');\r\n    };\r\n    return (\r\n        <AuthContext.Provider value={{ user, login, logout }}>\r\n            {children}\r\n        </AuthContext.Provider>\r\n    );\r\n};"
+        }
+    ]
+}
